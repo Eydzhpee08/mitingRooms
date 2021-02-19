@@ -1,4 +1,4 @@
--- таблица зарегистрированных покупателей
+-- таблица зарегистрированных
 CREATE TABLE users
 (
     id        BIGSERIAL PRIMARY KEY,
@@ -9,7 +9,7 @@ CREATE TABLE users
     created   TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
--- таблица токенов зарегистрированных покупателей
+-- таблица токенов зарегистрированных
 CREATE TABLE users_tokens (
     token       TEXT      NOT NULL UNIQUE,
     user_id BIGINT    NOT NULL references users,

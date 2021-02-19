@@ -8,7 +8,6 @@ import (
 	"time"
 
 	"github.com/jackc/pgx/v4/pgxpool"
-
 )
 
 var ErrNotFound = errors.New("item not found")
@@ -128,6 +127,7 @@ func (s *Service) Save(ctx context.Context, users *Users) (c *Users, err error) 
 
 }
 
+
 func (s *Service) RemoveById(ctx context.Context, id int64) (*Users, error) {
 	item := &Users{}
 	err := s.pool.QueryRow(ctx, `
@@ -183,3 +183,5 @@ func (s *Service) UnBlockByID(ctx context.Context, id int64) (*Users, error) {
 	return item, nil
 
 }
+
+
